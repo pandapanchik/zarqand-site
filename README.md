@@ -4,7 +4,8 @@ Zarqand restorani uchun bir sahifali sayt. Oddiy HTML/CSS/JS, build kerak emas.
 
 - `index.html` — sahifa
 - `css/style.css` — stillar (desktop, planshet ≤1100px, telefon ≤760px)
-- `js/main.js` — mobil menyu va bron formasi
+- `menyu.html` + `css/menu.css` — to‘liq menyu sahifasi (7 kategoriya); taom va narxlar shu faylda tahrirlanadi
+- `js/main.js` — mobil menyu, bron formasi, menyu sahifasidagi kategoriya paneli
 - `img/` — rasmlar (hozircha AI'da yaratilgan, haqiqiy fotolarga almashtiriladi)
 - `fonts/` — Gloock, Mulish, Pinyon Script (Google Fonts, o'zimizda saqlangan)
 - `figma-src/`, `docs/`, `assets/` — Figma maketi manbalari, saytga kirmaydi

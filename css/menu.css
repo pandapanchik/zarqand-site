@@ -1,0 +1,252 @@
+/* Zarqand — menyu sahifasi (style.css dan keyin yuklanadi) */
+
+:root{--lapis-t:#14394A;--wrap:calc(1312px + var(--gut) * 2)}
+html{scroll-padding-top:84px}
+.pic{position:relative;overflow:hidden;background:var(--lapis-d)}
+.pic img{width:100%;height:100%;object-fit:cover}
+.nav .links a[aria-current="page"]{opacity:1;color:var(--zar-l);border-color:var(--zar)}
+.btn-anor{box-shadow:none}
+.ai{font-size:13px;letter-spacing:0;text-transform:none;font-weight:600;top:14px;bottom:auto;left:auto;right:14px;transform:none}
+
+/* entrance: parts of each section rise in once, staggered by main.js; content stays visible without script */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .rv.shown{opacity:1;transform:none}
+.mhero > .pic img{animation:drift 18s ease-out both}
+@keyframes drift{from{transform:scale(1.08)}to{transform:scale(1)}}
+.arch .ai{top:22%;right:50%;transform:translateX(50%)}
+
+/* one dish row: name + note on the left, price on the right; space separates rows */
+.it{display:grid;grid-template-columns:1fr auto;column-gap:24px;align-items:baseline}
+.it h4{font-size:19px;font-weight:800}
+.it .pr{font-size:18px;font-weight:800;white-space:nowrap;font-variant-numeric:tabular-nums}
+.it p{grid-column:1 / 2;font-size:15px;line-height:1.5;margin-top:4px}
+.list{list-style:none;display:flex;flex-direction:column;gap:22px}
+.grp h3{font:400 32px/1.1 var(--serif);margin-bottom:26px}
+.grp + .grp{margin-top:80px}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:60px}
+.head .lede{max-width:460px}
+
+/* ---------- HERO: printed card beside the room ---------- */
+.mhero{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:var(--wrap);margin:0 auto;padding:0 var(--gut);min-height:clamp(640px,82vh,800px)}
+.card{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:var(--qand);color:var(--ink);overflow:hidden;padding:0 56px 56px;position:relative}
+.stripe{position:absolute;top:0;left:0;right:0;display:flex;height:56px;overflow:hidden}
+.stripe i{flex:none;width:28px;background:var(--lapis)}
+.stripe i:nth-child(even){background:var(--zar)}
+.card .logo{color:var(--lapis);font-size:30px;margin-top:96px}
+.card .logo .star{color:var(--zar);width:24px;height:24px}
+.card h1{font:400 clamp(64px,6.7vw,96px)/.95 var(--serif);letter-spacing:-.03em;color:var(--lapis);margin-top:40px}
+.card .sub{font-size:18px;line-height:1.6;max-width:430px;margin-top:28px}
+.card .btn{margin-top:36px}
+.card .ph{margin-top:32px;font-size:14px;color:var(--anor);background:rgba(139,30,45,.07);border-color:rgba(139,30,45,.45)}
+.mhero .pic .ai{z-index:1}
+
+/* ---------- category bar: sticks while the menu scrolls ---------- */
+.catbar{position:sticky;top:0;z-index:20;background:var(--lapis-d);margin-top:48px}
+.catbar ul{display:flex;gap:8px;list-style:none;max-width:var(--wrap);margin:0 auto;padding:12px var(--gut);overflow-x:auto;scrollbar-width:none}
+.catbar ul::-webkit-scrollbar{display:none}
+.catbar a{display:block;padding:12px 20px;border-radius:99px;font-size:15px;font-weight:700;white-space:nowrap;text-decoration:none;color:var(--qand);transition:background-color .2s,color .2s}
+.catbar a:hover{background:var(--lapis-t)}
+.catbar a.on{background:var(--zar);color:var(--lapis-d)}
+
+/* ---------- SALATLAR: the printed sheet beside the plate ---------- */
+.sheet-sec{background:var(--feruza);padding-top:150px;padding-bottom:150px}
+.sheet-in{display:grid;grid-template-columns:1fr minmax(0,760px);gap:12px;max-width:1312px;margin:0 auto}
+.sheet{position:relative;background:var(--qand);color:var(--ink);padding:84px 80px 76px}
+.scallop{position:absolute;left:0;right:0;height:24px;display:flex;justify-content:space-between;padding:0 4px;overflow:hidden}
+.scallop i{flex:none;width:24px;height:24px;border-radius:50%;background:var(--feruza)}
+.scallop.t{top:-12px}
+.scallop.b{bottom:-12px}
+.sheet .h2{font-size:clamp(38px,4.2vw,60px);text-align:center;color:var(--lapis)}
+.sheet .note{font-size:17px;line-height:1.6;text-align:center;margin-top:16px}
+.sheet .grp{margin-top:60px}
+.sheet .grp + .grp{margin-top:80px}
+.sheet .grp h3{text-align:center;color:var(--anor);margin-bottom:28px}
+.sheet .it .pr{color:var(--anor)}
+.sheet .it p{color:var(--ink-2)}
+.sheet .hours{margin-top:64px;text-align:center;font-size:16px;line-height:1.7}
+.sheet .ph{color:var(--anor);background:rgba(139,30,45,.07);border-color:rgba(139,30,45,.45)}
+
+/* ---------- SHO'RVALAR: giant word, filled bars ---------- */
+.soup{background:var(--lapis)}
+.soup .h2{font-size:clamp(84px,15.7vw,226px);line-height:.82;letter-spacing:-.045em;color:var(--zar);margin-left:-.04em}
+.soup-row{display:grid;grid-template-columns:5fr 7fr;gap:12px;margin-top:56px}
+.soup .lede{max-width:560px;margin-bottom:36px}
+.bars{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.bar{background:var(--lapis-t);padding:32px 28px}
+.bar h4{font:400 28px/1.15 var(--serif)}
+.bar .pr{color:var(--zar-l)}
+.bar p{color:rgba(244,234,219,.82);margin-top:8px}
+
+/* ---------- ASOSIY: tall arch beside the list ---------- */
+.main-in{display:grid;grid-template-columns:minmax(0,560px) 1fr;gap:clamp(56px,8.3vw,120px)}
+.main .arch-wrap{width:100%;aspect-ratio:auto;min-height:100%}
+.main .arch-line{left:-2.5%;top:-1.4%;width:105%;height:101.4%}
+.main .arch-line path{stroke:var(--anor)}
+.main .arch{box-shadow:none}
+.main .h2,.sweet .h2{color:var(--lapis)}
+.main .lede{margin-top:22px}
+.main .grp{margin-top:72px}
+.main .grp + .grp{margin-top:80px}
+.main .grp h3,.main .pr{color:var(--anor)}
+.main .it p,.sweet .it p{color:var(--ink-2)}
+
+/* ---------- XAMIR: photo row, three text columns ---------- */
+.dough{background:var(--lapis-d)}
+.dough .h2{color:var(--zar-l)}
+.prow{display:grid;grid-template-columns:5fr 7fr;gap:12px;margin-top:64px;height:clamp(360px,41.7vw,600px)}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:56px;margin-top:80px}
+.cols .list{gap:40px}
+.cols h4,.trio h4{font:400 28px/1.15 var(--serif)}
+.cols h4{color:var(--zar-l)}
+.cols p{color:rgba(244,234,219,.82)}
+.cols .pr{grid-column:1 / -1;margin-top:10px}
+
+/* ---------- KABOB: list beside a photograph that runs to the edge ---------- */
+.grill{display:grid;grid-template-columns:1fr 1fr;background:var(--komir);padding:0}
+.grill-l{padding:150px clamp(40px,6.7vw,96px) 150px var(--gut);max-width:calc(656px + var(--gut));justify-self:end;width:100%}
+.grill .lede{margin-top:22px}
+.grill .grp{margin-top:72px}
+.grill .grp + .grp{margin-top:80px}
+.grill .grp h3{color:var(--zar)}
+.grill .pr{color:var(--zar-l)}
+.grill .it p{color:rgba(244,234,219,.8)}
+
+/* ---------- SHIRINLIKLAR: list on both sides of the arch ---------- */
+.sweet .h2,.sweet > .in > .lede{text-align:center}
+.sweet > .in > .lede{margin:22px auto 0}
+.trio{display:grid;grid-template-columns:1fr minmax(0,400px) 1fr;gap:clamp(40px,5.6vw,80px);margin-top:90px;align-items:center}
+.trio .arch-wrap{width:100%;aspect-ratio:400/540}
+.trio .arch-line{left:-3.5%;top:-2.6%;width:107%;height:102.6%}
+.trio .arch-line path{stroke:var(--anor)}
+.trio .arch{box-shadow:none}
+.trio .list{gap:34px}
+.trio h4{color:var(--lapis)}
+.trio .pr{color:var(--anor)}
+
+/* ---------- ICHIMLIKLAR: photo beside four price columns ---------- */
+.drinks{background:var(--lapis)}
+.dwrap{display:grid;grid-template-columns:5fr 7fr;gap:12px;margin-top:72px}
+.dcols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dcol{background:var(--lapis-t);padding:36px 30px 40px}
+.dcol h3{font:400 32px/1.1 var(--serif);color:var(--zar);margin-bottom:28px}
+.dcol .list{gap:16px}
+.dcol h4{font-size:17px;font-weight:700}
+.dcol .pr{font-size:17px;color:var(--zar-l)}
+
+/* ---------- CTA: last photograph, text beside ---------- */
+.mcta{position:relative;padding:0;min-height:clamp(560px,54vw,780px);display:flex;align-items:flex-end}
+.mcta > .pic{position:absolute;inset:0}
+.mcta > .pic::after{content:"";position:absolute;inset:0;background:rgba(8,14,16,.58)}
+.mcta > .pic .ai{left:auto;right:24px;top:24px;bottom:auto;transform:none;z-index:1}
+.cta-t{position:relative;margin-left:55%;padding:0 var(--gut) 110px 0;max-width:calc(45% + 0px)}
+.cta-t .h2{font-size:clamp(38px,4.4vw,64px)}
+.cta-t p{font-size:18px;line-height:1.6;margin-top:22px;max-width:480px}
+.cta-t .btn{margin-top:34px;background:var(--qand);color:var(--ink)}
+.cta-t .btn:hover{background:#fff}
+
+/* ---------- FOOTER: photograph half, menu half ---------- */
+.mfoot{display:grid;grid-template-columns:1fr 1fr;background:var(--lapis-d);min-height:clamp(640px,57vw,820px)}
+.mfoot > .pic img{object-position:40% 55%;transform:scale(1.7)}
+.foot-r{display:flex;flex-direction:column;padding:80px var(--gut) 40px clamp(40px,6.7vw,96px)}
+.foot-r .logo{font-size:26px}
+.fmenu{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:56px}
+.fmenu a{font:400 clamp(30px,2.8vw,40px)/1.1 var(--serif);text-decoration:none;display:inline-block;transition:transform .2s,color .2s}
+.fmenu a:hover{color:var(--zar-l);transform:translateX(12px)}
+.fcon{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:64px;font-size:15px;line-height:1.7}
+.fcon b{display:block;font-size:16px;color:var(--zar-l);margin-bottom:6px}
+.fcon a{color:var(--qand)}
+.legal{margin-top:auto;padding-top:48px;font-size:13px;color:rgba(244,234,219,.75)}
+
+@media (prefers-reduced-motion:reduce){
+  .js .rv{opacity:1;transform:none;transition:none}
+  .mhero > .pic img{animation:none}
+}
+
+/* =================== TABLET =================== */
+@media (max-width:1100px){
+  .card{padding:0 36px 48px}
+  .sheet-in,.soup-row,.dwrap,.main-in{grid-template-columns:1fr}
+  .sheet-in > .pic,.dwrap > .pic{height:460px}
+  .soup-row > .pic{height:420px}
+  .main .arch-wrap{max-width:420px;aspect-ratio:420/560;min-height:0;justify-self:center}
+  .cols{grid-template-columns:1fr 1fr}
+  .grill{grid-template-columns:1fr}
+  .grill > .pic{order:-1;height:460px}
+  .grill-l{max-width:none;padding:90px var(--gut)}
+  .trio{grid-template-columns:1fr 1fr;gap:48px}
+  .trio .arch-wrap{grid-column:1 / -1;order:-1;max-width:360px;justify-self:center}
+  .cta-t{margin-left:40%;max-width:60%}
+}
+
+/* =================== MOBILE =================== */
+@media (max-width:760px){
+  .head{flex-direction:column;align-items:flex-start;gap:18px}
+  .it h4{font-size:17px}
+  .it .pr{font-size:16px}
+  .it p{font-size:14px}
+  .grp h3{font-size:26px;margin-bottom:20px}
+  .mhero{display:flex;flex-direction:column;min-height:0}
+  .mhero > .pic{height:240px;order:-1}
+  .card{margin-top:-24px;padding:0 22px 34px}
+  .stripe{height:40px}
+  .stripe i{width:20px}
+  .card .logo{margin-top:60px;font-size:26px}
+  .card h1{font-size:58px;margin-top:22px}
+  .card .sub{margin-top:18px}
+  .card .btn{margin-top:26px;align-self:stretch}
+  .catbar{margin-top:32px}
+  .catbar a{padding:10px 16px;font-size:14px}
+  .sheet-sec{padding:90px 10px}
+  .sheet-in{gap:28px}
+  .sheet-in > .pic{height:380px}
+  .sheet{padding:56px 22px 52px}
+  .scallop{height:18px}
+  .scallop i{width:18px;height:18px}
+  .scallop.t{top:-9px}
+  .scallop.b{bottom:-9px}
+  .sheet .note{font-size:15px}
+  .sheet .grp{margin-top:44px}
+  .sheet .grp + .grp{margin-top:76px}
+  .sheet .grp h3{font-size:24px;margin-bottom:20px}
+  .sheet .hours{margin-top:44px;font-size:15px}
+  .soup-row{margin-top:28px;gap:30px}
+  .soup-row > .pic{height:360px}
+  .soup .lede{margin-bottom:28px}
+  .bars{grid-template-columns:1fr;gap:6px}
+  .bar{padding:20px 18px}
+  .bar h4{font-size:23px}
+  .main-in{gap:56px}
+  .main .arch-wrap{max-width:310px}
+  .main .grp{margin-top:48px}
+  .main .grp + .grp{margin-top:76px}
+  .prow{grid-template-columns:1fr;height:auto;margin-top:40px;gap:8px}
+  .prow .pic{height:300px}
+  .prow .pic:last-child{height:220px}
+  .cols{grid-template-columns:1fr;gap:34px;margin-top:48px}
+  .cols .list{gap:34px}
+  .cols h4{font-size:24px}
+  .grill > .pic{height:340px}
+  .grill-l{padding:72px var(--gut) 90px}
+  .grill .grp{margin-top:48px}
+  .grill .grp + .grp{margin-top:76px}
+  .trio{grid-template-columns:1fr;gap:44px;margin-top:56px}
+  .trio .arch-wrap{max-width:300px}
+  .trio .list{gap:28px}
+  .trio h4{font-size:23px}
+  .dwrap{margin-top:44px;gap:8px}
+  .dwrap > .pic{height:400px}
+  .dcols{grid-template-columns:1fr;gap:8px}
+  .dcol{padding:28px 20px 30px}
+  .dcol h3{font-size:26px;margin-bottom:20px}
+  .mcta{display:block;min-height:0;background:var(--lapis-d)}
+  .mcta > .pic{position:relative;height:420px}
+  .mcta > .pic::after{display:none}
+  .cta-t{margin:0;max-width:none;padding:44px var(--gut) 72px}
+  .cta-t p{font-size:16px}
+  .cta-t .btn{width:100%}
+  .mfoot{grid-template-columns:1fr;min-height:0}
+  .mfoot > .pic{height:300px}
+  .foot-r{padding:48px var(--gut) 34px}
+  .fmenu{gap:12px;margin-top:34px}
+  .fcon{grid-template-columns:1fr;gap:22px;margin-top:44px}
+}

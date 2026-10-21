@@ -5,3 +5,7 @@
 assets/ai/*.png
 figma-src/desktop.html
 figma-src/mobile.html
+figma-src/menu-desktop.html
+figma-src/menu-mobile.html
+figma-src/__pycache__/
+.taste-skill/
