@@ -1,0 +1,7 @@
+.DS_Store
+.vercel
+.claude/
+# full-size AI originals and generated Figma import files
+assets/ai/*.png
+figma-src/desktop.html
+figma-src/mobile.html
